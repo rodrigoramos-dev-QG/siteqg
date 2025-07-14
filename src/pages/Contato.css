@@ -1,0 +1,162 @@
+/* src/pages/Contato.css */
+
+.contact-page {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #f9f9f9; /* Um fundo levemente cinza */
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.contact-info .contact-title {
+  color: var(--verde-escuro);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info .contact-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-icon.whatsapp {
+  color: #25D366;
+}
+.social-icon.whatsapp:hover {
+  color: #128C7E;
+}
+
+.social-icon.instagram {
+  color: #E4405F;
+}
+.social-icon.instagram:hover {
+  color: #C13584;
+}
+
+.contact-form-wrapper {
+  background-color: var(--verde-escuro);
+  padding: 2.5rem;
+  border-radius: 12px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  color: var(--bege);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #5a6a6b;
+  border-radius: 8px;
+  background-color: #3a4a4b;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: var(--laranja);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--laranja);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #d8601a;
+}
+
+/* Seção do Mapa */
+.map-section {
+  max-width: 1100px;
+  margin: 4rem auto 0 auto;
+  text-align: center;
+}
+
+.map-title {
+  color: var(--verde-escuro);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 50%; /* Proporção 2:1 para o mapa */
+  position: relative;
+  height: 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+  .contact-container {
+    padding: 2rem;
+  }
+  .contact-info .contact-title {
+    font-size: 2.2rem;
+  }
+}

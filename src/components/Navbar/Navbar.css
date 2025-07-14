@@ -1,0 +1,86 @@
+/* src/components/Navbar.css */
+
+:root {
+  --verde-escuro: #2a3a3b;
+  --laranja: #f37021;
+  --bege: #e8e2d9;
+}
+
+.navbar {
+  background-color: var(--verde-escuro);
+  width: 100%;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  height: 80px; /* Definimos uma altura fixa para facilitar o alinhamento */
+}
+
+.navbar-content {
+  position: relative; /* ESSENCIAL: Torna-se a referência para o posicionamento absoluto */
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; /* Usamos flex para alinhar o logo verticalmente */
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 60px;
+  display: block;
+}
+
+/* AQUI ESTÁ A MÁGICA DA CENTRALIZAÇÃO */
+.navbar-links {
+  position: absolute; /* Remove os links do fluxo normal da página */
+  left: 50%; /* Move o início dos links para o meio da tela */
+  top: 50%;
+  transform: translate(-50%, -50%); /* Desloca os links para trás em 50% do seu próprio tamanho */
+
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: var(--bege);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a.active {
+  color: var(--laranja);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-links a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    height: auto; /* Altura automática para caber o conteúdo */
+    padding: 1rem 0;
+  }
+
+  .navbar-content {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    gap: 1rem; /* Espaço entre o logo e os links */
+  }
+
+  .navbar-links {
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove a transformação */
+    
+    flex-direction: column; /* Empilha os links */
+    width: 100%;
+    align-items: center; /* Centraliza o texto dos links */
+    gap: 0.5rem;
+  }
+}
